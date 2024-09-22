@@ -1,0 +1,63 @@
+def calculator():
+    while True:
+        try:
+            num1 = float(input("Enter 1st number: "))
+            num2 = float(input("Enter 2nd number: "))
+        except ValueError:
+            print("Invalid input. Please enter numerical values.")
+            continue
+        
+        print("\nPress 1 for Addition")
+        print("Press 2 for Subtraction")
+        print("Press 3 for Multiplication")
+        print("Press 4 for Division")
+        print("Press 5 for Modulus")
+        
+        try:
+            choice = int(input("Enter your choice from 1-5: "))
+        except ValueError:
+            print("Invalid choice. Please enter a number between 1 and 5.")
+            continue
+        
+        if choice == 1:
+            add = num1 + num2
+            print(f"The Addition of the given two numbers is {add}")
+        
+        elif choice == 2:
+            sub = num1 - num2
+            print(f"The Subtraction of the given two numbers is {sub}")
+        
+        elif choice == 3:
+            mul = num1 * num2
+            print(f"The Multiplication of the given two numbers is {mul}")
+        
+        elif choice == 4:
+            if num2 == 0:
+                print("Error: Division by zero is not allowed.")
+            else:
+                div = num1 / num2
+                print(f"The Division of the given two numbers is {div}")
+        
+        elif choice == 5:
+            if num2 == 0:
+                print("Error: Modulus by zero is not allowed.")
+            else:
+                mod = num1 % num2
+                print(f"The Modulus of the given two numbers is {mod}")
+        
+        else:
+            print("Invalid Input. Please enter a number between 1 and 5.")
+        
+        # Ask if the user wants to perform another calculation
+        again = input("\nDo you want to perform another calculation? (yes/no): ").strip().lower()
+        if again != 'yes':
+            break
+
+print("Welcome to the Python Calculator!")
+calculator()
+print("Thank you for using the calculator!")
+
+
+    
+
+
