@@ -1,0 +1,48 @@
+import string
+import random
+
+print("....Welcome to Password Generator....") 
+
+letters = list(string.ascii_letters)
+
+digits = list(string.digits)
+#print(digits)
+
+symbols = list(string.punctuation)
+#print(pun)
+
+n_letters = int(input("Enter number of letters you want in your password:"))
+
+n_digits = int(input("Enter number of digits you want in your password:"))
+
+n_symbols = int(input("Enter number of symbols you want in your password:"))
+
+pass_list = []
+
+for i in range(1,n_letters+1):
+    set= random.choice(letters)
+    pass_list += set
+
+for i in range(1,n_digits+1):
+    set = random.choice(digits)
+    pass_list += set
+
+for i in range(1,n_symbols+1):
+    set = random.choice(symbols)
+    pass_list += set
+
+
+random.shuffle(pass_list)
+
+#print(pass_list)
+
+password = ''.join(pass_list)
+
+print("The generated password is ", password )
+
+    
+
+
+
+   
+
